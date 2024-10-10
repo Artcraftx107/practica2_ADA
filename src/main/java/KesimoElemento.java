@@ -10,18 +10,18 @@ public class KesimoElemento {
 		if(ini == fin){
 			/*Si solo hay un elemento, lo devuelvo*/
 			kesimo=v[fin];
-		}
+		}else{
+			//Elegimos un pivote y particionamos el array
+			int pivote = partir(v, ini, fin);
 
-		//Elegimos un pivote y particionamos el array
-		int pivote = partir(v, ini, fin);
-
-		//Comparamos posicion del pivote con k
-		if(pivote==k){
-			kesimo=v[pivote];
-		} else if (k<pivote) {
-			kesimo=buscarKesimo(v, k, ini, pivote-1);
-		} else {
-			kesimo=buscarKesimo(v, k, pivote+1, fin);
+			//Comparamos posicion del pivote con k
+			if(pivote==k){
+				kesimo=v[pivote];
+			} else if (k<pivote) {
+				kesimo=buscarKesimo(v, k, ini, pivote-1);
+			} else {
+				kesimo=buscarKesimo(v, k, pivote+1, fin);
+			}
 		}
 		return kesimo;
 	}
