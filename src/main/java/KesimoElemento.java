@@ -26,19 +26,25 @@ public class KesimoElemento {
 		return kesimo;
 	}
 
-	private static int partir(int[] v, int ini, int fin) {
-		int pivote = v[fin];
-		int i = ini-1;
+	public static int partir(int[] a, int inf, int sup) {
+		int pivote = a[inf];
+		int i = inf + 1;
+		int j = sup;
 
-		for(int j = 0; j<fin; j++){
-			if(v[j]<=pivote){
+		do {
+			while ((i <= j) && (a[i] <= pivote)) {
 				i++;
-				intercambiar(v, i, j);
 			}
-		}
+			while ((i <= j) && (a[j] > pivote)) {
+				j--;
+			}
+			if (i < j) {
+				intercambiar(a, i, j);
+			}
+		} while (i <= j);
 
-		intercambiar(v, i+1,fin);
-		return i+1;
+		intercambiar(a, inf, j);
+		return j;
 	}
 
 	private static void intercambiar(int[] v, int i, int j) {
