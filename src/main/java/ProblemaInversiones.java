@@ -43,7 +43,7 @@ public class ProblemaInversiones {
 			if (a[i] <= a[j]) {
 				temp[k++] = a[i++];
 			}else{
-				temp[k++] = a[i++];
+				temp[k++] = a[j++];
 				inverisones+=(medio-i + 1); //El resto de posiciones a la izquierda son todas inversiones
 			}
 		}
@@ -55,7 +55,7 @@ public class ProblemaInversiones {
 
 		//Copiar elementos restantes de la mitad derecha
 		while(j<=ult){
-			temp[k++]=a[j++]; 
+			temp[k++]=a[j++];
 		}
 
 		//Transferir elementos ordenados again al array original
