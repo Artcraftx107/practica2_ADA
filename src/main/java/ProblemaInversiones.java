@@ -50,7 +50,12 @@ public class ProblemaInversiones {
 
 		//Copiar elementos restantes de la mitad izquierda
 		while(i<=medio){
-			temp[k++]=a[j++];
+			temp[k++]=a[i++];
+		}
+
+		//Copiar elementos restantes de la mitad derecha
+		while(j<=ult){
+			temp[k++]=a[j++]; 
 		}
 
 		//Transferir elementos ordenados again al array original
